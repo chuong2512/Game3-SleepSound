@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    
     public int currentMusic;
     private PlayerData playerData; //todo delete
     private GameDataManager gameData; //todo delete
@@ -26,7 +25,7 @@ public class MusicController : MonoBehaviour
             //AudioManager.Instance.Play();
         }
     }
-    
+
     void Start()
     {
         gameData = GameDataManager.Instance;
@@ -37,7 +36,7 @@ public class MusicController : MonoBehaviour
     {
         popup.Show(price, id);
     }
-    
+
     public void Pay(int price, int id)
     {
         if (!playerData.CheckCanUnlock(price, id)) return;

@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class IAPKey
 {
-    public const string PACK1 = "nd_add5";
-    public const string PACK2 = "nd_add10";
-    public const string PACK3 = "nd_add25";
-    public const string PACK4 = "nd_add50";
-    public const string PACK5 = "nd_add100";
-    public const string PACK6 = "nd_add250";
+    public const string PACK1 = "";
+    public const string PACK2 = "";
+    public const string PACK3 = "";
+    public const string PACK4 = "";
+    public const string PACK5 = "";
+    public const string PACK6 = "";
 }
 
-public class IAPManager : PersistentSingleton<IAPManager>/*, IStoreListener*/
+public class IAPManager : PersistentSingleton<IAPManager> /*, IStoreListener*/
 {
     /*private static IStoreController storeController;
     private static IExtensionProvider extensionProvider;*/
