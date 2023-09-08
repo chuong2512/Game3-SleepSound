@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.50980395}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6666667}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -192,14 +192,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _screens:
+  - {fileID: 6622660414381027193, guid: 0b9f1261d816ec14abaf9418b39bd7ca, type: 3}
+  - {fileID: 5323948173331394658, guid: 723c73097981c4d4aa2c49b8149a93dd, type: 3}
   - {fileID: 2325131155786755832, guid: e900b9536ae00a44b9ce72e613a6321f, type: 3}
   - {fileID: 5323948173331394658, guid: 141f32e673a83b840880dfc9a98841de, type: 3}
-  - {fileID: 2824638753431624500, guid: 141faf9716d89ea49b10b7c3a46b85be, type: 3}
   - {fileID: 4770826866938577762, guid: e9d4acee25011314ba1758eaeb033ca5, type: 3}
-  - {fileID: 6622660414381027193, guid: 0b9f1261d816ec14abaf9418b39bd7ca, type: 3}
+  - {fileID: 2824638753431624500, guid: 141faf9716d89ea49b10b7c3a46b85be, type: 3}
   _openingPopups: {fileID: 8068837164011591800}
   _closingPopups: {fileID: 8068837163677461600}
   _overlay: {fileID: 8910155619466853965}
+  folderPath: Assets/BabySound/Prefabs/UI
 --- !u!1 &8068837163677461603
 GameObject:
   m_ObjectHideFlags: 0

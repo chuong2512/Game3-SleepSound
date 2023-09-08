@@ -9,13 +9,15 @@ public class AudioManager : Singleton<AudioManager>
     public float _timePlay = 0.6f;
 
     private AudioClip _audioClip;
-    private float _timeCount;
     private bool _isPlaying;
     private int _crtId = -1;
 
+    public bool IsPlaying => _isPlaying;
+
     public void SetTimeCount(float time)
     {
-        _timeCount = time;
+        Play();
+        GameManager.SetTimeStop?.Invoke(time);
     }
 
     private void Start()
@@ -33,19 +35,6 @@ public class AudioManager : Singleton<AudioManager>
         musicSource.loop = true;
     }
 
-    /*private void FixedUpdate()
-    {
-        if (_isPlaying)
-        {
-            if (_timeCount > 0) _timeCount -= Time.fixedDeltaTime;
-            else
-            {
-                musicSource.Stop();
-                _isPlaying = false;
-            }
-        }
-    }*/
-
     public void PlaySong(int id)
     {
         GameDataManager.Instance.SetCurrentSongID(id);
@@ -55,7 +44,6 @@ public class AudioManager : Singleton<AudioManager>
         musicSource.clip = _audioClip;
         musicSource.Play();
         _isPlaying = true;
-        _timeCount = _timePlay;
         GameManager.OnPlayMusic.Invoke(_isPlaying);
     }
 
@@ -68,11 +56,31 @@ public class AudioManager : Singleton<AudioManager>
         else
         {
             musicSource.Stop();
+            GameManager.SetTimeStop.Invoke(0);
         }
 
         _isPlaying = !_isPlaying;
 
         GameManager.OnPlayMusic.Invoke(_isPlaying);
         Debug.Log($"PLaying : {_isPlaying}");
+    }
+
+    public void Stop()
+    {
+        musicSource.Stop();
+        _isPlaying = false;
+
+        GameManager.OnPlayMusic.Invoke(_isPlaying);
+    }
+
+    public void Play()
+    {
+        if (!_isPlaying)
+        {
+            musicSource.Play();
+            _isPlaying = true;
+        }
+
+        GameManager.OnPlayMusic.Invoke(_isPlaying);
     }
 }

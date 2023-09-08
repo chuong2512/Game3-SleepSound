@@ -16,6 +16,8 @@ public enum ScreenType
     SongScreen,
     SetTimePopup,
     UnlockPopup,
+    ComingSoon,
+    
 }
 
 public class UIManager : PersistentSingleton<UIManager>
@@ -31,6 +33,34 @@ public class UIManager : PersistentSingleton<UIManager>
     public Transform OpeningPopups => _openingPopups;
     public Transform ClosingPopups => _closingPopups;
     public BasePopup CurrentScreen => _currentScreen;
+
+#if UNITY_EDITOR
+    public string folderPath = "Assets/BabySound/Prefabs";
+
+    [Button]
+    public void OnValidate()
+    {
+        var spriteGUIDs = UnityEditor.AssetDatabase.FindAssets("t:Prefab", new[] {folderPath});
+
+        var listScreen = new List<BasePopup>();
+
+        int n = spriteGUIDs.Length;
+
+        for (int i = 0; i < n; i++)
+        {
+            string audioPath =
+                UnityEditor.AssetDatabase.GUIDToAssetPath(spriteGUIDs[i]); // Chuyển đổi GUID sang đường dẫn
+            var popup = UnityEditor.AssetDatabase.LoadAssetAtPath<BasePopup>(audioPath); // Tải T từ đường dẫn
+
+            if (popup != null)
+            {
+                listScreen.Add(popup);
+            }
+        }
+
+        _screens = listScreen.ToArray();
+    }
+#endif
 
     void Start()
     {
