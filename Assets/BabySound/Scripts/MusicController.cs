@@ -50,7 +50,7 @@ public class MusicController : MonoBehaviour
     {
         IAPManager.OnPurchaseSuccess = () =>
         {
-            playerData.AddDiamond(value);
+            playerData.AddCoin(value);
             diamonds.text = "x" + playerData.intDiamond;
             musicCoins.text = diamonds.text;
         };

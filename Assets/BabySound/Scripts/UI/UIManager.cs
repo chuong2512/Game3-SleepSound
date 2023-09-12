@@ -65,6 +65,11 @@ public class UIManager : PersistentSingleton<UIManager>
     void Start()
     {
         OpenScreen(ScreenType.HomeScreen);
+
+        if (GameDataManager.Instance.playerData.time <= 0)
+        {
+            OpenScreen(ScreenType.RegisterScreen);
+        }
     }
 
     [Button]

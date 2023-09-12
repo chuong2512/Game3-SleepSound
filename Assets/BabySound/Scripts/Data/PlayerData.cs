@@ -64,7 +64,7 @@ public class PlayerData : BaseData
         Save();
     }
 
-    public void AddDiamond(int a)
+    public void AddCoin(int a)
     {
         intDiamond += a;
 

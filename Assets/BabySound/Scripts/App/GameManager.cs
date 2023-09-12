@@ -8,6 +8,7 @@ public class GameManager : PersistentSingleton<GameManager>
     public static Action<bool> OnPlayMusic;
     public static Action<int> OnChooseSong;
     public static Action<float> SetTimeStop;
+    public static Action<float> SetRegisterTime;
 
     private void Start()
     {

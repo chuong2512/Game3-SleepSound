@@ -34,7 +34,7 @@ namespace BabySound.Scripts
             SetActive(false);
         }
 
-        public void Back()
+        public virtual void Back()
         {
             UIManager.Instance.Back();
         }
