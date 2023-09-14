@@ -8,11 +8,11 @@ using UnityEngine.Purchasing.Security;
 public class IAPKey
 {
     public const string PACK1 = "game3_1_sleepsound";
-    public const string PACK2 = "game3_1_sleepsound";
-    public const string PACK3 = "game3_1_sleepsound";
-    public const string PACK4 = "game3_1_sleepsound";
-    public const string PACK5 = "game3_1_sleepsound";
-    public const string PACK6 = "game3_1_sleepsound";
+    public const string PACK2 = "game3_2_sleepsound";
+    public const string PACK3 = "game3_3_sleepsound";
+    public const string PACK4 = "game3_4_sleepsound";
+    public const string PACK5 = "game3_5_sleepsound";
+    public const string PACK6 = "game3_6_sleepsound";
     
     public const string PACK1_REGISTER = "game3_register_1_sleepsound";
     public const string PACK2_REGISTER = "game3_register_2_sleepsound";
